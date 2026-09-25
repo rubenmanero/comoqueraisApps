@@ -12,32 +12,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComoqueraisApps">
         <activity
-            android:name=".MainActivity"
+            android:name=".HelloApp.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".HelloActivity"
+            android:name=".HelloApp.HelloActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".MessageActivity"
+            android:name=".MessageApp.MessageActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
-            android:name=".ReplyActivity"
+            android:name=".MessageApp.ReplyActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MenuActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IMCApp.IMCActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

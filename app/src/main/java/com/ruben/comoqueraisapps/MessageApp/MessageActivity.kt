@@ -1,8 +1,7 @@
-package com.ruben.comoqueraisapps
+package com.ruben.comoqueraisapps.MessageApp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -12,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ruben.comoqueraisapps.R
 
 class MessageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
