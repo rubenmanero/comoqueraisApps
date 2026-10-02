@@ -122,7 +122,8 @@
                 android:valueTo="200"
                 app:thumbColor="@color/background_fab"
                 app:thumbHeight="16dp"
-                app:thumbWidth="32dp"
+                app:thumbWidth="16dp"
+                app:thumbTrackGapSize="0dp"
                 app:trackHeight="4dp" />
 
         </LinearLayout>

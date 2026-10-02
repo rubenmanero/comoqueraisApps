@@ -22,7 +22,7 @@
         <activity
             android:name=".MessageApp.MessageActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MessageApp.ReplyActivity"
             android:exported="false"
@@ -39,6 +39,10 @@
         </activity>
         <activity
             android:name=".IMCApp.IMCActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".IMCApp.ResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
