@@ -45,6 +45,11 @@
             android:name=".IMCApp.ResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".BoardgamesApp.BoardgamesActivity"
+            android:theme="@style/Theme.BoardgamesApp"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

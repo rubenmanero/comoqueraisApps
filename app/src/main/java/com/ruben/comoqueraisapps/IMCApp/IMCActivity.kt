@@ -13,6 +13,7 @@ import com.google.android.material.slider.RangeSlider
 import com.ruben.comoqueraisapps.R
 import org.w3c.dom.Text
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
 class IMCActivity : AppCompatActivity() {
 
@@ -102,7 +103,10 @@ class IMCActivity : AppCompatActivity() {
     }
 
     private fun calculateIMC(): Double {
+        val dfs = DecimalFormatSymbols()
+        dfs.decimalSeparator = '.'
         val df = DecimalFormat("#.##")
+        df.decimalFormatSymbols = dfs
         val imc = currentWeight / Math.pow(currentHeight.toDouble()/100, 2.0)
         return df.format(imc).toDouble()
     }
