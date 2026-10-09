@@ -1,0 +1,37 @@
+package com.ruben.comoqueraisapps.BoardgamesApp
+
+import android.view.View
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getColor
+import androidx.recyclerview.widget.RecyclerView
+import com.ruben.comoqueraisapps.R
+
+class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    val tvCategoryName = view.findViewById<TextView>(R.id.tvCategoryName)
+    val divider = view.findViewById<View>(R.id.divider)
+
+    fun render(gameCategory: GameCategory) {
+        when(gameCategory){
+            GameCategory.Cooperative -> {
+                tvCategoryName.text = "Cooperativos"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
+            }
+            GameCategory.DeckBuilding -> {
+                tvCategoryName.text = "Deckbuilding"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_deckbuilding_category))
+            }
+            GameCategory.Euro -> {
+                tvCategoryName.text = "Eurogames"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_euro_category))
+            }
+            GameCategory.LCG -> {
+                tvCategoryName.text = "Cooperativos"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
+            }
+            GameCategory.Legacy -> {
+                tvCategoryName.text = "Cooperativos"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
+            }
+        }
+    }
+}

@@ -1,18 +1,18 @@
 package com.ruben.comoqueraisapps.BoardgamesApp
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ruben.comoqueraisapps.R
 
-class CategoriesAdapter (private val categories: List<GameCategory>): RecyclerView.Adapter<CategoriesViewHolder> {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): CategoriesViewHolder {
-        TODO("Not yet implemented")
+class CategoriesAdapter (private val categories: List<GameCategory>): RecyclerView.Adapter<CategoriesViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_game_category, parent, false)
+        return CategoriesViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.render(categories[position])
     }
 
     override fun getItemCount() = categories.size
