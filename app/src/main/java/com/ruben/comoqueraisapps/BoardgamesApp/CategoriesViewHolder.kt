@@ -16,7 +16,7 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
                 tvCategoryName.text = "Cooperativos"
                 divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
             }
-            GameCategory.DeckBuilding -> {
+            GameCategory.Deckbuilding -> {
                 tvCategoryName.text = "Deckbuilding"
                 divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_deckbuilding_category))
             }
@@ -25,12 +25,12 @@ class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
                 divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_euro_category))
             }
             GameCategory.LCG -> {
-                tvCategoryName.text = "Cooperativos"
-                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
+                tvCategoryName.text = "LCG"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_lcg_category))
             }
             GameCategory.Legacy -> {
-                tvCategoryName.text = "Cooperativos"
-                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_cooperative_category))
+                tvCategoryName.text = "Legacy"
+                divider.setBackgroundColor(getColor(divider.context,R.color.bgapp_legacy_category))
             }
         }
     }

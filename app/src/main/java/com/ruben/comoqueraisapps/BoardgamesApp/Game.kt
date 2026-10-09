@@ -1,3 +1,3 @@
 package com.ruben.comoqueraisapps.BoardgamesApp
 
-data class Game (val name: String, val categorie: GameCategory, var isSelected: Boolean = true)
+data class Game (val name: String, val category: GameCategory, var isSelected: Boolean = true)

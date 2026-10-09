@@ -6,16 +6,29 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ruben.comoqueraisapps.BoardgamesApp.GameCategory.*
 import com.ruben.comoqueraisapps.R
 
 class BoardgamesActivity : AppCompatActivity() {
 
+    private val categories = listOf(Cooperative, Deckbuilding, Euro, LCG, Legacy)
+
+
+    private val games = listOf (
+        Game("Frostpunk", Cooperative),
+        Game("Hero Realm", Deckbuilding),
+        Game("Agricola", Euro),
+        Game("Arkham Horror", LCG),
+        Game("Gloomhaven", Legacy)
+    )
+
     private lateinit var rvCategories: RecyclerView
     private lateinit var rvGames: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
-    //private lateinit var gamesAdapter: GamesAdapter
+    private lateinit var gamesAdapter: GamesAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +47,14 @@ class BoardgamesActivity : AppCompatActivity() {
 
     private fun initUI() {
         categoriesAdapter = CategoriesAdapter(categories)
-        //gamesAdapter = GamesAdapter(games)
+        rvCategories.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.HORIZONTAL,
+            false)
+        rvCategories.adapter = categoriesAdapter
+
+        gamesAdapter = GamesAdapter(games)
+        rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        rvGames.adapter = gamesAdapter
 
     }
 
