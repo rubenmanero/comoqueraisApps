@@ -26,10 +26,15 @@ class BoardgamesActivity : AppCompatActivity() {
 
     private val games = mutableListOf (
         Game("Frostpunk", Cooperative),
+        Game("Sleeping Gods", Cooperative),
         Game("Hero Realm", Deckbuilding),
+        Game("Aeon's End", Deckbuilding),
         Game("Agricola", Euro),
+        Game("Everdell", Euro),
         Game("Arkham Horror", LCG),
-        Game("Gloomhaven", Legacy)
+        Game("Marvel Champions", LCG),
+        Game("Gloomhaven", Legacy),
+        Game("Clank! Adquisitions Incorporated", Legacy)
     )
 
     private lateinit var rvCategories: RecyclerView
@@ -101,7 +106,7 @@ class BoardgamesActivity : AppCompatActivity() {
     }
 
     private fun onGameSelected(position: Int) {
-        games[position].isSelected = !games[position].isSelected
+        gamesAdapter.games[position].isSelected = !gamesAdapter.games[position].isSelected
         updateGames()
     }
 
