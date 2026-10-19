@@ -2,6 +2,7 @@ package com.ruben.comoqueraisapps.BoardgamesApp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.widget.Adapter
 import android.widget.Button
 import android.widget.EditText
@@ -86,6 +87,16 @@ class BoardgamesActivity : AppCompatActivity() {
     }
 
     private fun updateGames() {
+        val selectedCategories: List<GameCategory> = categories.filter { it.isSelected }
+        val newGames: List<Game> = games.filter { selectedCategories.contains(it.category) }
+        games.forEach {
+            Log.i("games",it.isSelected.toString())
+        }
+        newGames.forEach {
+            Log.i("newGames",it.isSelected.toString())
+        }
+
+        gamesAdapter.games = newGames
         gamesAdapter.notifyDataSetChanged()
     }
 
@@ -94,8 +105,14 @@ class BoardgamesActivity : AppCompatActivity() {
         updateGames()
     }
 
+    private fun onCategorySelected(position: Int) {
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateGames()
+    }
+
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories) {position -> onCategorySelected(position)}
         rvCategories.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.HORIZONTAL,
             false)

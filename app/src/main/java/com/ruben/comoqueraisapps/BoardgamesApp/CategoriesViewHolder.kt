@@ -2,6 +2,8 @@ package com.ruben.comoqueraisapps.BoardgamesApp
 
 import android.view.View
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
 import com.ruben.comoqueraisapps.R
@@ -9,8 +11,20 @@ import com.ruben.comoqueraisapps.R
 class CategoriesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val tvCategoryName = view.findViewById<TextView>(R.id.tvCategoryName)
     val divider = view.findViewById<View>(R.id.divider)
+    val viewContainer = view.findViewById<CardView>(R.id.viewContainer)
 
-    fun render(gameCategory: GameCategory) {
+    fun render(gameCategory: GameCategory, onItemSelected: (Int) -> Unit) {
+
+        val color = if(gameCategory.isSelected) {
+            R.color.bgapp_background_card
+        } else {
+            R.color.bgapp_background_disabled
+        }
+
+        viewContainer.setCardBackgroundColor(ContextCompat.getColor(viewContainer.context, color))
+
+        itemView.setOnClickListener { onItemSelected(layoutPosition) }
+
         when(gameCategory){
             GameCategory.Cooperative -> {
                 tvCategoryName.text = "Cooperativos"

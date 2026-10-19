@@ -20,6 +20,7 @@ class GamesViewHolder(view: View): RecyclerView.ViewHolder(view) {
             tvGame.paintFlags = tvGame.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
 
+        cbGame.isClickable = false
         cbGame.isChecked = game.isSelected
 
         tvGame.text = game.name
