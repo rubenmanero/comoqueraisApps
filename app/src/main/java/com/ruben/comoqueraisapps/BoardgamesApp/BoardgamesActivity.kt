@@ -23,18 +23,14 @@ class BoardgamesActivity : AppCompatActivity() {
 
     private val categories = listOf(Cooperative, Deckbuilding, Euro, LCG, Legacy)
 
+    private val frostpunk = Game("Frostpunk", Cooperative)
 
     private val games = mutableListOf (
-        Game("Frostpunk", Cooperative),
-        Game("Sleeping Gods", Cooperative),
+        frostpunk,
         Game("Hero Realm", Deckbuilding),
-        Game("Aeon's End", Deckbuilding),
         Game("Agricola", Euro),
-        Game("Everdell", Euro),
         Game("Arkham Horror", LCG),
-        Game("Marvel Champions", LCG),
-        Game("Gloomhaven", Legacy),
-        Game("Clank! Adquisitions Incorporated", Legacy)
+        Game("Gloomhaven", Legacy)
     )
 
     private lateinit var rvCategories: RecyclerView
@@ -94,11 +90,12 @@ class BoardgamesActivity : AppCompatActivity() {
     private fun updateGames() {
         val selectedCategories: List<GameCategory> = categories.filter { it.isSelected }
         val newGames: List<Game> = games.filter { selectedCategories.contains(it.category) }
-        games.forEach {
-            Log.i("games",it.isSelected.toString())
+
+        games.forEachIndexed { i, game ->
+            Log.i("games","$i ${game.name} ${game.isSelected}")
         }
-        newGames.forEach {
-            Log.i("newGames",it.isSelected.toString())
+        newGames.forEachIndexed { i, game ->
+            Log.i("newGames","$i ${game.name} ${game.isSelected}")
         }
 
         gamesAdapter.games = newGames
@@ -106,7 +103,7 @@ class BoardgamesActivity : AppCompatActivity() {
     }
 
     private fun onGameSelected(position: Int) {
-        gamesAdapter.games[position].isSelected = !gamesAdapter.games[position].isSelected
+        games[position].isSelected = !games[position].isSelected
         updateGames()
     }
 
