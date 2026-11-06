@@ -1,13 +1,19 @@
 package com.ruben.comoqueraisapps.SuperheroApp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import com.ruben.comoqueraisapps.R
 import com.ruben.comoqueraisapps.databinding.ActivitySuperheroListBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -42,7 +48,23 @@ class SuperheroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
-
+        binding.progressBar.isVisible = true
+        CoroutineScope(Dispatchers.IO).launch {
+            val myResponse: Response<SuperheroDataResponse> =
+                retrofit.create(ApiService::class.java).getSuperheroes(query)
+            if(myResponse.isSuccessful) {
+                Log.i("Consulta", "Funciona :)")
+                val response: SuperheroDataResponse? = myResponse.body()
+                if(response != null) {
+                    Log.i("Cuerpo de la consulta", response.toString())
+                    runOnUiThread {
+                        binding.progressBar.isVisible = false
+                    }
+                }
+            } else {
+                Log.i("Consulta", "No funciona :(")
+            }
+        }
     }
 
     private fun getRetrofit(): Retrofit {
