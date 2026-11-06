@@ -37,7 +37,7 @@ class SuperheroListActivity : AppCompatActivity() {
                 return false
             }
 
-            override fun onQueryTextChange(newText: String?) =false
+            override fun onQueryTextChange(newText: String?) = false
         })
     }
 
