@@ -7,7 +7,8 @@ data class SuperheroDetailResponse(
     @SerializedName("name") val name: String,
     @SerializedName("powerstats") val powerstats: PowerStatsResponse,
     @SerializedName("image") val image: SuperheroImageDetailResponse,
-    @SerializedName("biography") val biography:Biography
+    @SerializedName("biography") val biography: Biography,
+    @SerializedName("appearance") val appearance: Appearance
 )
 
 data class PowerStatsResponse(
@@ -23,6 +24,16 @@ data class SuperheroImageDetailResponse(@SerializedName("url") val url:String)
 
 data class Biography(
     @SerializedName("full-name") val fullName:String,
-    @SerializedName("publisher") val publisher:String
+    @SerializedName("publisher") val publisher:String,
+    @SerializedName("place-of-birth") val birthPlace:String,
+    @SerializedName("alter-egos") val alteregos:String,
+    @SerializedName("aliases") val aliases:List<String>,
+    @SerializedName("first-appearance") val firstAppearance:String
 )
 
+data class Appearance(
+    @SerializedName("race") val race:String,
+    @SerializedName("publisher") val publisher:String,
+    @SerializedName("height") val height:List<String>,
+    @SerializedName("weight") val weight:List<String>
+)
