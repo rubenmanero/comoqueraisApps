@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/review_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EjercicioRepaso.ReviewActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/ReviewTextViews"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:text="@string/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv2"
+                style="@style/ReviewTextViews"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:textColor="@color/white"
+                android:background="@color/red"
+                android:text="@string/red"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        style="@style/ReviewTextViews"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:textColor="@color/black"
+                        android:background="@color/orange"
+                        android:text="@string/orange"/>
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        style="@style/ReviewTextViews"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:textColor="@color/black"
+                        android:background="@color/yellow"
+                        android:text="@string/yellow"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv5"
+                    style="@style/ReviewTextViews"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:textColor="@color/black"
+                    android:background="@color/green"
+                    android:text="@string/green"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv6"
+                    style="@style/ReviewTextViews"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:textColor="@color/black"
+                    android:background="@color/cyan"
+                    android:text="@string/cyan"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv7"
+                        style="@style/ReviewTextViews"
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue"
+                        android:text="@string/blue"/>
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        style="@style/ReviewTextViews"
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:textColor="@color/white"
+                        android:background="@color/violet"
+                        android:text="@string/violet"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv9"
+                    style="@style/ReviewTextViews"
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:textColor="@color/white"
+                    android:background="@color/gray"
+                    android:text="@string/gray"/>
+
+                <TextView
+                    android:id="@+id/tv10"
+                    style="@style/ReviewTextViews"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:textColor="@color/white"
+                    android:background="@color/black"
+                    android:text="@string/yellow"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

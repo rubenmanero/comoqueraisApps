@@ -60,6 +60,10 @@
             android:name=".SuperheroApp.DetailSuperheroActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".EjercicioRepaso.ReviewActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

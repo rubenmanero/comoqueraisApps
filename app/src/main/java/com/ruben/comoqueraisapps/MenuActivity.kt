@@ -8,54 +8,60 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ruben.comoqueraisapps.BoardgamesApp.BoardgamesActivity
+import com.ruben.comoqueraisapps.EjercicioRepaso.ReviewActivity
 import com.ruben.comoqueraisapps.HelloApp.MainActivity
 import com.ruben.comoqueraisapps.IMCApp.IMCActivity
 import com.ruben.comoqueraisapps.MessageApp.MessageActivity
 import com.ruben.comoqueraisapps.SuperheroApp.SuperheroListActivity
+import com.ruben.comoqueraisapps.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_menu)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         val btnHelloApp = findViewById<Button>(R.id.btnHelloApp)
         val btnMessageApp = findViewById<Button>(R.id.btnMessageApp)
         val btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
         val btnBoardgamesApp = findViewById<Button>(R.id.btnBoardgamesApp)
         val btnSuperheroApp = findViewById<Button>(R.id.btnSuperheroApp)
+        val btnReviewApp = findViewById<Button>(R.id.btnRepaso)
 
         btnHelloApp.setOnClickListener { navigateToHelloApp() }
         btnMessageApp.setOnClickListener { navigateToMessageApp() }
         btnIMCApp.setOnClickListener { navigateToIMCApp() }
         btnBoardgamesApp.setOnClickListener { navigateToBoardgamesApp() }
         btnSuperheroApp.setOnClickListener { navigateToSuperheroApp() }
+        btnReviewApp.setOnClickListener { navigateToReviewApp() }
     }
 
     private fun navigateToHelloApp() {
-        var intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
     private fun navigateToMessageApp() {
-        var intent = Intent(this, MessageActivity::class.java)
+        val intent = Intent(this, MessageActivity::class.java)
         startActivity(intent)
     }
     private fun navigateToIMCApp() {
-        var intent = Intent(this, IMCActivity::class.java)
+        val intent = Intent(this, IMCActivity::class.java)
         startActivity(intent)
     }
     private fun navigateToBoardgamesApp() {
-        var intent = Intent(this, BoardgamesActivity::class.java)
+        val intent = Intent(this, BoardgamesActivity::class.java)
         startActivity(intent)
     }
     private fun navigateToSuperheroApp() {
-        var intent = Intent(this, SuperheroListActivity::class.java)
+        val intent = Intent(this, SuperheroListActivity::class.java)
         startActivity(intent)
     }
-
+    private fun navigateToReviewApp() {
+        var intent = Intent(this, ReviewActivity::class.java)
+        startActivity(intent)
+    }
 
 }
