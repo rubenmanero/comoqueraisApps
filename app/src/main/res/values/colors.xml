@@ -41,6 +41,8 @@
     <color name="superhero_stat_durability">#03A9F4</color>
     <color name="superhero_stat_power">#FFEB3B</color>
     <color name="superhero_stat_combat">#673AB7</color>
+
+    <!--ReviewApp-->
     <color name="review_background">#673AB7</color>
     <color name="red">#FF0000</color>
     <color name="violet">#8C00FF</color>

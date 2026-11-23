@@ -37,5 +37,6 @@
     <string name="blue">azul</string>
     <string name="violet">violeta</string>
     <string name="gray">gris</string>
+    <string name="black">negro</string>
 
 </resources>
