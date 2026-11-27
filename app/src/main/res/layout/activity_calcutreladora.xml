@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calcutreladora.CalcutreladoraActivity">
+
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:fontFamily="sans-serif-black"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Calcutreladora"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        style="@style/CalcutreladoraTextViews"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Escribe un número"
+        android:labelFor="@+id/etN1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/calcutreladora_fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        app:layout_constraintBottom_toTopOf="@id/tv2">
+
+        <EditText
+            android:id="@+id/etN1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:inputType="number"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv2"
+        style="@style/CalcutreladoraTextViews"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Escribe otro número"
+        android:labelFor="@+id/etN2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv1"
+        app:layout_constraintBottom_toTopOf="@id/cv2"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/calcutreladora_fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        app:layout_constraintBottom_toTopOf="@id/tv3">
+
+        <EditText
+            android:id="@+id/etN2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:inputType="number"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv3"
+        style="@style/CalcutreladoraTextViews"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Elige una operación"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv2"
+        app:layout_constraintBottom_toTopOf="@id/rgOp"/>
+
+    <RadioGroup
+        android:id="@+id/rgOp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv3"
+        app:layout_constraintBottom_toTopOf="@id/btnCalculate">
+
+        <RadioButton
+            android:id="@+id/rbMas"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="+"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/calcutreladora_texto"
+            android:checked="true"
+            app:buttonTint="@color/calcutreladora_fondo"/>
+
+        <RadioButton
+            android:id="@+id/rbMenos"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="-"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/calcutreladora_texto"
+            app:buttonTint="@color/calcutreladora_fondo"/>
+
+        <RadioButton
+            android:id="@+id/rbPor"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="x"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/calcutreladora_texto"
+            app:buttonTint="@color/calcutreladora_fondo"/>
+
+        <RadioButton
+            android:id="@+id/rbEntre"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="/"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/calcutreladora_texto"
+            app:buttonTint="@color/calcutreladora_fondo"/>
+
+        <RadioButton
+            android:id="@+id/rbResto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:text="%"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/calcutreladora_texto"
+            app:buttonTint="@color/calcutreladora_fondo"/>
+
+    </RadioGroup>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/calcutreladora_texto">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="CALCULAR"
+            android:textSize="36sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

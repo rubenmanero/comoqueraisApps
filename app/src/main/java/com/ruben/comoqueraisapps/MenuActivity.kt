@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ruben.comoqueraisapps.BoardgamesApp.BoardgamesActivity
+import com.ruben.comoqueraisapps.Calcutreladora.CalcutreladoraActivity
 import com.ruben.comoqueraisapps.DotHunter.DotHunterActivity
 import com.ruben.comoqueraisapps.EjercicioRepaso.ReviewActivity
 import com.ruben.comoqueraisapps.HelloApp.MainActivity
 import com.ruben.comoqueraisapps.IMCApp.IMCActivity
+import com.ruben.comoqueraisapps.Memory.MemoryActivity
 import com.ruben.comoqueraisapps.MessageApp.MessageActivity
 import com.ruben.comoqueraisapps.SuperheroApp.SuperheroListActivity
 import com.ruben.comoqueraisapps.databinding.ActivityMenuBinding
@@ -32,6 +34,8 @@ class MenuActivity : AppCompatActivity() {
         val btnSuperheroApp = findViewById<Button>(R.id.btnSuperheroApp)
         val btnReviewApp = findViewById<Button>(R.id.btnRepaso)
         val btnDotHunter = findViewById<Button>(R.id.btnDotHunter)
+        val btnCalcutreladora = findViewById<Button>(R.id.btnCalcutreladora)
+        val btnMemory = findViewById<Button>(R.id.btnMemory)
 
         btnHelloApp.setOnClickListener { navigateToHelloApp() }
         btnMessageApp.setOnClickListener { navigateToMessageApp() }
@@ -40,6 +44,8 @@ class MenuActivity : AppCompatActivity() {
         btnSuperheroApp.setOnClickListener { navigateToSuperheroApp() }
         btnReviewApp.setOnClickListener { navigateToReviewApp() }
         btnDotHunter.setOnClickListener { navigateToDotHunter() }
+        btnCalcutreladora.setOnClickListener { navigateToCalcutreladora() }
+        btnMemory.setOnClickListener { navigateToMemory() }
     }
 
     private fun navigateToHelloApp() {
@@ -68,6 +74,14 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToDotHunter() {
         var intent = Intent(this, DotHunterActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToCalcutreladora() {
+        var intent = Intent(this, CalcutreladoraActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToMemory() {
+        var intent = Intent(this, MemoryActivity::class.java)
         startActivity(intent)
     }
 

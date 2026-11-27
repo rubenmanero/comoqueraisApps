@@ -52,6 +52,8 @@
     <color name="green">#00FF11</color>
     <color name="yellow">#FFDD00</color>
     <color name="orange">#FF6F00</color>
+
+    <!--DotHunter-->
     <color name="dothunter_background">#5B1313</color>
     <color name="dot_hunter_board">#FFEB8B</color>
     <color name="dot_hunter_btnup">#4FC3F7</color>
@@ -59,5 +61,19 @@
     <color name="dot_hunter_tiles">#009688</color>
     <color name="green_out">#3EFF00</color>
     <color name="green_in">#109501</color>
+
+    <!--Calcutreladora-->
+    <color name="calcutreladora_fondo">#96F2FF</color>
+    <color name="calcutreladora_texto">#3F51B5</color>
+
+    <!--Memory-->
+    <color name="memory_background">#32003E</color>
+    <color name="memory_text">#E36FFF</color>
+    <color name="memory_card1">#44A6FF</color>
+    <color name="memory_card2">#074900</color>
+    <color name="memory_card3">#FF5151</color>
+    <color name="memory_card4">#6ABA19</color>
+    <color name="memory_card5">#FFE869</color>
+    <color name="memory_card6">#27369D</color>
 
 </resources>
