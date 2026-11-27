@@ -3,6 +3,7 @@ package com.ruben.comoqueraisapps.DotHunter
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +44,7 @@ class DotHunterActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.tvMessage1.text = getString(R.string.initial_message1)
+        binding.tvMessage1.setTextColor(getColor(R.color.white))
         binding.tvMessage2.text = getString(R.string.initial_message2)
 
         score = 0
@@ -65,10 +67,19 @@ class DotHunterActivity : AppCompatActivity() {
         } while ((obstacleX == hunterX && obstacleY == hunterY) || (obstacleX == preyX && obstacleY == preyY))
         paintItem('o', obstacleX, obstacleY)
 
+        Log.i("hunter", "x: $hunterY, y: $hunterX")
+        Log.i("prey", "x: $preyY, y: $preyX")
+        Log.i("obstacle", "x: $obstacleY, y: $obstacleX")
+
         Handler(Looper.getMainLooper()).postDelayed({
             binding.tvMessage1.text = "Don´t crash with green circles!"
             binding.tvMessage2.text = "Score: 0"
         }, 4000)
+
+        binding.btnUp.isClickable = true
+        binding.btnDown.isClickable = true
+        binding.btnLeft.isClickable = true
+        binding.btnRight.isClickable = true
     }
 
     private fun paintItem(item: Char, x: Int, y: Int) {
@@ -112,10 +123,30 @@ class DotHunterActivity : AppCompatActivity() {
             listOf(binding.out40, binding.out41, binding.out42)
         )
 
-        binding.btnUp.setOnClickListener { moveUp() }
-        binding.btnDown.setOnClickListener { moveDown() }
-        binding.btnLeft.setOnClickListener { moveLeft() }
-        binding.btnRight.setOnClickListener { moveRight() }
+        binding.btnUp.setOnClickListener {
+            moveUp()
+            Log.i("hunter", "x: $hunterY, y: $hunterX")
+            Log.i("prey", "x: $preyY, y: $preyX")
+            Log.i("obstacle", "x: $obstacleY, y: $obstacleX")
+        }
+        binding.btnDown.setOnClickListener {
+            moveDown()
+            Log.i("hunter", "x: $hunterY, y: $hunterX")
+            Log.i("prey", "x: $preyY, y: $preyX")
+            Log.i("obstacle", "x: $obstacleY, y: $obstacleX")
+        }
+        binding.btnLeft.setOnClickListener {
+            moveLeft()
+            Log.i("hunter", "x: $hunterY, y: $hunterX")
+            Log.i("prey", "x: $preyY, y: $preyX")
+            Log.i("obstacle", "x: $obstacleY, y: $obstacleX")
+        }
+        binding.btnRight.setOnClickListener {
+            moveRight()
+            Log.i("hunter", "x: $hunterY, y: $hunterX")
+            Log.i("prey", "x: $preyY, y: $preyX")
+            Log.i("obstacle", "x: $obstacleY, y: $obstacleX")
+        }
     }
 
     private fun moveUp() {
@@ -161,12 +192,20 @@ class DotHunterActivity : AppCompatActivity() {
 
     private fun gameOver() {
         binding.tvMessage1.text = "You lose!"
+        binding.tvMessage1.setTextColor(getColor(R.color.red))
         binding.tvMessage2.text = "You crashed! Score: $score"
+
+        binding.btnUp.isClickable = false
+        binding.btnDown.isClickable = false
+        binding.btnLeft.isClickable = false
+        binding.btnRight.isClickable = false
+
         Handler(Looper.getMainLooper()).postDelayed({ initUI() }, 3000)
     }
 
     private fun preyHunted() {
         score++
+        eraseItem(obstacleX, obstacleY)
         binding.tvMessage2.text = "Score: $score"
         do {
             preyX = (0..2).random()
@@ -178,5 +217,20 @@ class DotHunterActivity : AppCompatActivity() {
             obstacleY = (0..4).random()
         } while ((obstacleX == hunterX && obstacleY == hunterY) || (obstacleX == preyX && obstacleY == preyY))
         paintItem('o', obstacleX, obstacleY)
+        checkWin()
+    }
+
+    private fun checkWin() {
+        if(score==10) {
+            binding.tvMessage1.text = "You win!"
+            binding.tvMessage1.setTextColor(getColor(R.color.green_out))
+            binding.tvMessage2.text = "You reached 10 points\nCongratulations!"
+            Handler(Looper.getMainLooper()).postDelayed({ initUI() }, 3000)
+
+            binding.btnUp.isClickable = false
+            binding.btnDown.isClickable = false
+            binding.btnLeft.isClickable = false
+            binding.btnRight.isClickable = false
+        }
     }
 }
