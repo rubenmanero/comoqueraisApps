@@ -16,6 +16,7 @@ import com.ruben.comoqueraisapps.IMCApp.IMCActivity
 import com.ruben.comoqueraisapps.Memory.MemoryActivity
 import com.ruben.comoqueraisapps.MessageApp.MessageActivity
 import com.ruben.comoqueraisapps.SuperheroApp.SuperheroListActivity
+import com.ruben.comoqueraisapps.TicTacToe.TicTacToeActivity
 import com.ruben.comoqueraisapps.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
@@ -36,6 +37,7 @@ class MenuActivity : AppCompatActivity() {
         val btnDotHunter = findViewById<Button>(R.id.btnDotHunter)
         val btnCalcutreladora = findViewById<Button>(R.id.btnCalcutreladora)
         val btnMemory = findViewById<Button>(R.id.btnMemory)
+        val btnTicTacToe = findViewById<Button>(R.id.btnTicTacToe)
 
         btnHelloApp.setOnClickListener { navigateToHelloApp() }
         btnMessageApp.setOnClickListener { navigateToMessageApp() }
@@ -46,6 +48,7 @@ class MenuActivity : AppCompatActivity() {
         btnDotHunter.setOnClickListener { navigateToDotHunter() }
         btnCalcutreladora.setOnClickListener { navigateToCalcutreladora() }
         btnMemory.setOnClickListener { navigateToMemory() }
+        btnTicTacToe.setOnClickListener { navigateToTicTacToe() }
     }
 
     private fun navigateToHelloApp() {
@@ -82,6 +85,10 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToMemory() {
         var intent = Intent(this, MemoryActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToTicTacToe() {
+        var intent = Intent(this, TicTacToeActivity::class.java)
         startActivity(intent)
     }
 

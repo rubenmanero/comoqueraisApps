@@ -76,4 +76,9 @@
     <color name="memory_card5">#FFE869</color>
     <color name="memory_card6">#27369D</color>
 
+    <!--TicTacToe-->
+    <color name="tictactoe_background">#E013FF</color>
+    <color name="tictactoe_player1">#1070C8</color>
+    <color name="tictactoe_player2">#FF2727</color>
+
 </resources>
