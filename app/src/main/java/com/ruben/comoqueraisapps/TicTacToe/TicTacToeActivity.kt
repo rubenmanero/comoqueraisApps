@@ -13,17 +13,7 @@ import com.ruben.comoqueraisapps.R
 class TicTacToeActivity : AppCompatActivity() {
     private lateinit var tvPlayer: TextView
     private var views: MutableList<ImageView> = mutableListOf()
-    private var positions: Array<Int> = arrayOf(
-        R.id.im1,
-        R.id.im2,
-        R.id.im3,
-        R.id.im4,
-        R.id.im5,
-        R.id.im6,
-        R.id.im7,
-        R.id.im8,
-        R.id.im9
-    )
+    private var positions: Array<Int> = arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0)
     private var player1turn: Boolean = true
     private var player2turn: Boolean = false
     private var flag: Int = 0
@@ -32,7 +22,18 @@ class TicTacToeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tic_tac_toe)
 
-        initComponents(positions)
+        val ids: Array<Int> = arrayOf(
+            R.id.im1,
+            R.id.im2,
+            R.id.im3,
+            R.id.im4,
+            R.id.im5,
+            R.id.im6,
+            R.id.im7,
+            R.id.im8,
+            R.id.im9
+        )
+        initComponents(ids)
         initListeners()
         initUI()
     }
