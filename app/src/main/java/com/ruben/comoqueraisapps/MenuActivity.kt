@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ruben.comoqueraisapps.BoardgamesApp.BoardgamesActivity
+import com.ruben.comoqueraisapps.DotHunter.DotHunterActivity
 import com.ruben.comoqueraisapps.EjercicioRepaso.ReviewActivity
 import com.ruben.comoqueraisapps.HelloApp.MainActivity
 import com.ruben.comoqueraisapps.IMCApp.IMCActivity
@@ -30,6 +31,7 @@ class MenuActivity : AppCompatActivity() {
         val btnBoardgamesApp = findViewById<Button>(R.id.btnBoardgamesApp)
         val btnSuperheroApp = findViewById<Button>(R.id.btnSuperheroApp)
         val btnReviewApp = findViewById<Button>(R.id.btnRepaso)
+        val btnDotHunter = findViewById<Button>(R.id.btnDotHunter)
 
         btnHelloApp.setOnClickListener { navigateToHelloApp() }
         btnMessageApp.setOnClickListener { navigateToMessageApp() }
@@ -37,6 +39,7 @@ class MenuActivity : AppCompatActivity() {
         btnBoardgamesApp.setOnClickListener { navigateToBoardgamesApp() }
         btnSuperheroApp.setOnClickListener { navigateToSuperheroApp() }
         btnReviewApp.setOnClickListener { navigateToReviewApp() }
+        btnDotHunter.setOnClickListener { navigateToDotHunter() }
     }
 
     private fun navigateToHelloApp() {
@@ -61,6 +64,10 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToReviewApp() {
         var intent = Intent(this, ReviewActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToDotHunter() {
+        var intent = Intent(this, DotHunterActivity::class.java)
         startActivity(intent)
     }
 

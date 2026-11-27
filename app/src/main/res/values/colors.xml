@@ -52,5 +52,12 @@
     <color name="green">#00FF11</color>
     <color name="yellow">#FFDD00</color>
     <color name="orange">#FF6F00</color>
+    <color name="dothunter_background">#5B1313</color>
+    <color name="dot_hunter_board">#FFEB8B</color>
+    <color name="dot_hunter_btnup">#4FC3F7</color>
+    <color name="dot_hunter_btndown">#9575CD</color>
+    <color name="dot_hunter_tiles">#009688</color>
+    <color name="green_out">#3EFF00</color>
+    <color name="green_in">#109501</color>
 
 </resources>

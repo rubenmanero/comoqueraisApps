@@ -92,5 +92,17 @@
             android:textStyle="bold"
             android:backgroundTint="#1E7C1E" />
 
+        <Button
+            android:id="@+id/btnDotHunter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="DotHunter"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:backgroundTint="#1E7C1E" />
+
     </LinearLayout>
 </FrameLayout>

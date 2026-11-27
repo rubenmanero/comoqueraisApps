@@ -38,5 +38,7 @@
     <string name="violet">violeta</string>
     <string name="gray">gris</string>
     <string name="black">negro</string>
+    <string name="initial_message1">Score 10 points hunting black dots. Don\'t crash with green circles!</string>
+    <string name="initial_message2">Press arrow buttons to move...</string>
 
 </resources>
